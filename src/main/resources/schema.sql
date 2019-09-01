@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS car;
 
-CREATE TABLE employee (
-  serialId INT  PRIMARY KEY,
-  brandName VARCHAR(250) NOT NULL,
-  modelName VARCHAR(250) NOT NULL,
-  lifeTime INT NOT NULL,
-);
+  CREATE TABLE car (
+    serial_id INT  PRIMARY KEY,
+    brand_name VARCHAR(250) NOT NULL,
+    model_name VARCHAR(250) NOT NULL,
+    life_time INT NOT NULL
+  );

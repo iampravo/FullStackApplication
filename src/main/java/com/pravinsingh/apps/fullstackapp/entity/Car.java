@@ -3,12 +3,16 @@ package com.pravinsingh.apps.fullstackapp.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "car")
 public class Car {
     @Id
-    private long serialId;
+    @Column(name = "serialId")
+    private int serialId;
+    @Column(name = "brandName")
     private String brandName;
+    @Column(name = "modelName")
     private String modelName;
+    @Column(name = "lifeTime")
     private int lifeTime;
     //private String cityOfRegistration;
    // private String ownerName;
@@ -18,18 +22,18 @@ public class Car {
     public Car() {
     }
 
-    public Car(long serialId, String brandName, String modelName, int lifeTime) {
+    public Car(int serialId, String brandName, String modelName, int lifeTime) {
         this.serialId = serialId;
         this.brandName = brandName;
         this.modelName = modelName;
         this.lifeTime = lifeTime;
     }
 
-    public long getSerialId() {
+    public int getSerialId() {
         return serialId;
     }
 
-    public void setSerialId(long serialId) {
+    public void setSerialId(int serialId) {
         this.serialId = serialId;
     }
 

@@ -1,0 +1,1 @@
+insert into car (serial_id,brand_name, model_name,life_time) values (1,'Maruti1','WagonR',10);
