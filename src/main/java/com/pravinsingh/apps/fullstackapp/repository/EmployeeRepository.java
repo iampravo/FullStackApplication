@@ -1,9 +1,9 @@
 package com.pravinsingh.apps.fullstackapp.repository;
 
-import com.pravinsingh.apps.fullstackapp.entity.Person;
+import com.pravinsingh.apps.fullstackapp.entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Person,Long> {
+public interface EmployeeRepository extends JpaRepository<Car,Long> {
 }

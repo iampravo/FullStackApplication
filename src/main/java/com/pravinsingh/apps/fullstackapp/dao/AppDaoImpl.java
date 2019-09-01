@@ -1,49 +1,38 @@
 package com.pravinsingh.apps.fullstackapp.dao;
 
-import com.pravinsingh.apps.fullstackapp.data.ResponseModel;
-import com.pravinsingh.apps.fullstackapp.entity.Person;
-import com.pravinsingh.apps.fullstackapp.model.Employee;
+import com.google.common.collect.Lists;
+import com.pravinsingh.apps.fullstackapp.entity.Car;
 import com.pravinsingh.apps.fullstackapp.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Component
 public class AppDaoImpl implements AppDao {
+    private static int COUNT = 200;
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
     @PostConstruct
     public void init() {
-        createAndPopulateInMemoryDB();
+        generateData();
     }
 
-    private void createAndPopulateInMemoryDB() {
-
-
-    }
-
-    @Override
-    public Optional<ResponseModel> getData() {
-        ResponseModel<Employee> employeeResponseModel = new ResponseModel<>();
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Pravin", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin2", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin3", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin4", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin5", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin6", "Singh", 29, LocalDate.now()));
-        employees.add(new Employee("Pravin7", "Singh", 29, LocalDate.now()));
-        employeeResponseModel.setList(employees);
-        return Optional.of(employeeResponseModel);
-        //return Optional.empty();
-    }
-    public Optional<List<Person>> getDataFromRepository() {
+    public Optional<List<Car>> getDataFromRepository() {
         return Optional.of(employeeRepository.findAll());
+    }
+
+    public void generateData() {
+        List<Car> carList = Lists.newArrayList();
+        for (int i = 0; i < COUNT; i++) {
+            carList.add(new Car(i, "Pravin" + i, "Singh" + i, (20 + i)));
+        }
+       employeeRepository.saveAll(carList);
     }
 }

@@ -22,3 +22,12 @@ target/classes/com/pravinsingh/apps/fullstackapp/service/AppService.class
 target/classes/com/pravinsingh/apps/fullstackapp/service/AppServiceImpl.class
 target/classes/import.sql
 .DS_Store
+target/classes/com/pravinsingh/apps/fullstackapp/entity/Car.class
+target/classes/com/pravinsingh/apps/fullstackapp/exception/FullStackAppException.class
+target/classes/com/pravinsingh/apps/fullstackapp/model/EmployeeDTO.class
+target/classes/schema.sql
+target/fullstack-app-1.0-SNAPSHOT.jar
+target/maven-archiver/pom.properties
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
