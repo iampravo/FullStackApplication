@@ -1,24 +1,16 @@
-package com.pravinsingh.apps.fullstackapp.entity;
+package com.pravinsingh.apps.fullstackapp.model;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "car")
-public class Car {
-    @Id
+public class CarDTO {
     private int serialId;
     private String brandName;
     private String modelName;
     private int lifeTime;
-    //private String cityOfRegistration;
-   // private String ownerName;
 
 
-
-    public Car() {
+    public CarDTO() {
     }
 
-    public Car(int serialId, String brandName, String modelName, int lifeTime) {
+    public CarDTO(int serialId, String brandName, String modelName, int lifeTime) {
         this.serialId = serialId;
         this.brandName = brandName;
         this.modelName = modelName;
